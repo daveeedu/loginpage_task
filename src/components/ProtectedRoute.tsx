@@ -4,10 +4,19 @@ import { Navigate, Outlet } from 'react-router';
 import config from '../utils/config';
 
 const { routes } = config
-const ProtectedRoute: React.FC = () => {
+
+interface ProtectedRouteProps {
+  restrict: 'authenticated' | 'unauthenticated';
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ restrict }) => {
   const user = useSelector((state: RootState) => state.user.user);
 
-  return user ? <Outlet /> : <Navigate to={routes.login} replace />;
+  if (restrict === 'authenticated') {
+    return user ? <Outlet /> : <Navigate to={routes.login} replace />;
+  } else {
+    return user ? <Navigate to={routes.home} replace /> : <Outlet />;
+  }
 };
 
 export default ProtectedRoute;

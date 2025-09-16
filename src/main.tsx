@@ -17,9 +17,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: routes.login, element: <LogIn /> },
       {
-        element: <ProtectedRoute />,
+        element: <ProtectedRoute restrict="unauthenticated" />,
+        children: [{ path: routes.login, element: <LogIn /> }],
+      },
+      {
+        element: <ProtectedRoute restrict="authenticated" />,
         children: [{ path: routes.home, element: <LandingPage /> }],
       },
     ],
