@@ -49,13 +49,13 @@ export default function LogIn() {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-14 p-14 items-center h-full bg-[#F4F4F4]">
-      <div className="flex justify-center items-center">
-        <picture className="">
-          <img src={IloginIllustrate} alt="Login Illustration" className="" />
+    <div className="lg:grid lg:grid-cols-2 2xl:gap-14 lg:p-8 md:p-14 p-4 items-center 2xl:h-full bg-[#F4F4F4]">
+      <div className="flex justify-center items-center  lg:mb-0 mb-10">
+        <picture className="lg:w-[501px] lg:h-[500px]">
+          <img src={IloginIllustrate} alt="Login Illustration" className="w-full h-full object-cover" />
         </picture>
       </div>
-      <div className="text-white w-full m-auto h-full p-8 bg-white rounded-[20px] border border-[#E2E2E2] ">
+      <div className="text-white w-full m-auto md:h-full md:mb-0 mb-8 md:p-8 p-4 bg-white rounded-[20px] border border-[#E2E2E2] ">
         <h2 className="text-start font-poppins text-4xl font-medium mb-6 text-[#1C1B1F]">
           Welcome to <br />
           <span className="text-5xl font-black text-[#6358DC]">Unstop</span>
@@ -89,7 +89,7 @@ export default function LogIn() {
               {/* Username */}
               <div>
                 <div className="flex items-center text-start w-full bg-[#F4F4F4] rounded-2xl relative">
-                  <div className="w-10/12 m-auto pt-2 pb-4">
+                  <div className="md:w-10/12 w-9/12 m-auto pt-2 pb-4">
                     <label className="text-start text-xs font-normal text-[#1C1B1F] mb-2">
                       User name
                     </label>
@@ -102,8 +102,8 @@ export default function LogIn() {
                   </div>
                   <img
                     src={IaccountCircle}
-                    alt="profile"
-                    className="absolute left-4"
+                    alt="profile icon"
+                    className="absolute 2xl:w-8 md:w-6 w-5 2xl:left-4 lg:left-3 md:left-4 left-3"
                   />
                 </div>
                 <ErrorMessage
@@ -116,7 +116,7 @@ export default function LogIn() {
               {/* Email */}
               <div>
                 <div className="flex items-center text-start w-full bg-[#F4F4F4] rounded-2xl relative">
-                  <div className="w-10/12 m-auto pt-2 pb-4">
+                  <div className="md:w-10/12 w-9/12 m-auto pt-2 pb-4">
                     <label className="text-start text-xs font-normal text-[#1C1B1F] mb-2">
                       Email
                     </label>
@@ -127,7 +127,7 @@ export default function LogIn() {
                       className=" w-full text-[#1C1B1F] font-bold placeholder:text-[#1C1B1F] focus:ring-0 focus:outline-none"
                     />
                   </div>
-                  <img src={Imail} alt="profile" className="absolute left-4" />
+                  <img src={Imail} alt="profile" className="absolute 2xl:w-8 md:w-6 w-5 2xl:left-4 lg:left-3 md:left-4 left-3" />
                 </div>
                 <ErrorMessage
                   name="email"
@@ -139,7 +139,7 @@ export default function LogIn() {
               {/* Password */}
               <div>
                 <div className="flex items-center text-start w-full bg-[#F4F4F4] rounded-2xl relative">
-                  <div className="w-10/12 m-auto pt-2 pb-4">
+                  <div className="md:w-10/12 w-9/12 m-auto pt-2 pb-4">
                     <label className="text-start text-xs font-normal text-[#1C1B1F] mb-2">
                       Password
                     </label>
@@ -150,11 +150,11 @@ export default function LogIn() {
                       className=" w-full text-[#1C1B1F] font-bold placeholder:text-[#1C1B1F] focus:ring-0 focus:outline-none"
                     />
                   </div>
-                  <img src={Ikey} alt="profile" className="absolute left-4" />
+                  <img src={Ikey} alt="profile" className="absolute 2xl:w-8 md:w-6 w-5 2xl:left-4 lg:left-3 md:left-4 left-3" />
                   <img
                     src={Ivisibility}
                     alt="visibility toggle"
-                    className="absolute right-4 cursor-pointer"
+                    className="absolute right-4 2xl:w-8 md:w-6 w-5 cursor-pointer"
                     onClick={togglePasswordVisibility}
                   />
                 </div>

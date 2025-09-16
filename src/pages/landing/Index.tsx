@@ -22,7 +22,7 @@ export default function LandingPage() {
         navigate(routes.login);
     }
   return (
-    <div className="flex flex-col gap-24 justify-center items-center h-screen bg-[#F4F4F4]">
+    <div className="flex flex-col md:gap-24 gap-10 justify-center items-center h-screen bg-[#F4F4F4]">
       <h2 className="text-center font-poppins text-[46px] font-medium mb-6 text-[#1C1B1F]">
         Welcome to <br />
         <span className="text-[48px] font-black leading-[136%] text-[#6358DC]">Unstop</span>

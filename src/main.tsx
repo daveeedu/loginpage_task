@@ -8,6 +8,7 @@ import store from './store/store.ts'
 import LogIn from './pages/auth/Index.tsx'
 import LandingPage from './pages/landing/Index.tsx'
 import config from './utils/config.ts'
+import ProtectedRoute from './components/ProtectedRoute.tsx'
 
 const { routes } = config
 
@@ -17,7 +18,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: routes.login, element: <LogIn /> },
-      { path: routes.home, element: <LandingPage /> },
+      {
+        element: <ProtectedRoute />,
+        children: [{ path: routes.home, element: <LandingPage /> }],
+      },
     ],
   },
 ]);

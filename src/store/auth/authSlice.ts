@@ -12,12 +12,14 @@ interface AuthUser {
 }
 
 interface AuthState {
+    isLoggedIn: boolean;
     user: AuthUser | null;
     loading: boolean;
     error: string | null;
 } 
 
 const initialState: AuthState = {
+    isLoggedIn: false,
     user: localStorage.getItem("authUser") ? JSON.parse(localStorage.getItem("authUser") as string) : null,
     loading: false,
     error: null,
