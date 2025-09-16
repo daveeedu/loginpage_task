@@ -8,7 +8,7 @@ type Routes = {
   };
   
   const routes: Routes = {
-    login: "/",
+    login: "/auth/login",
     home: "/home",
   };
   

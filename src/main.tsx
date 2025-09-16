@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
 import { Provider } from 'react-redux'
 import store from './store/store.ts'
 import LogIn from './pages/auth/Index.tsx'
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        path: '/',
+        element: <Navigate to={routes.login} replace />,
+      },
       {
         element: <ProtectedRoute restrict="unauthenticated" />,
         children: [{ path: routes.login, element: <LogIn /> }],
